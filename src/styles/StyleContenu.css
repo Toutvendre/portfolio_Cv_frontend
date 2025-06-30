@@ -4,9 +4,7 @@
   font-family: 'Space Grotesk', sans-serif;
 }
 
-
-
-/* Style par défaut (grands écrans) */
+/* Style par défaut (écrans moyens) */
 .background-image {
     transform: scale(1.2) translateY(20%);
     opacity: 0.5;
@@ -14,13 +12,33 @@
     filter: grayscale(65%);
 }
 
-/* Responsive mobile : remonter l’image */
+/* Responsive mobile : remonter l'image */
 @media (max-width: 768px) {
     .background-image {
         transform: scale(2.4) translateY(10%);
     }
 }
 
+/* Grands écrans : agrandir et déplacer vers la gauche */
+@media (min-width: 1024px) {
+    .background-image {
+        transform: scale(1.6) translateX(-15%) translateY(15%);
+    }
+}
+
+/* Très grands écrans : encore plus grand et plus à gauche */
+@media (min-width: 1440px) {
+    .background-image {
+        transform: scale(1.8) translateX(-18%) translateY(25%);
+    }
+}
+
+/* Écrans ultra-larges */
+@media (min-width: 1920px) {
+    .background-image {
+        transform: scale(2.0) translateX(-25%) translateY(5%);
+    }
+}
 
 /* Style pour les barres verticales des icônes sociales */
 .social-bar {
@@ -67,5 +85,3 @@
     transform: translateY(-2px) scale(1.05); /* levée + agrandissement */
     box-shadow: 0 6px 18px rgba(185, 28, 28, 0.6); /* ombre plus profonde */
 }
-
-

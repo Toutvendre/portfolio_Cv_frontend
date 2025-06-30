@@ -16,22 +16,36 @@ const Contenu = () => {
         <div
             className="relative min-h-screen w-full px-4 sm:px-6 lg:px-20"
             style={{
-                backgroundColor: colors.zinc[950],
-                backgroundImage: `linear-gradient(135deg, ${colors.zinc[950]} 0%, ${colors.zinc[900]} 50%, ${colors.zinc[800]} 100%)`,
+                backgroundColor: `${colors.zinc[950]}80`, // Ajout de transparence (80 = 50% opacité)
+                backgroundImage: `linear-gradient(135deg, ${colors.zinc[950]}80 0%, ${colors.zinc[900]}60 50%, ${colors.zinc[800]}40 100%)`,
                 color: colors.zinc[50]
             }}
         >
             {/* Effet de fond géométrique */}
             <div
-                className="absolute inset-0 opacity-5"
+                className="absolute inset-0 opacity-5 z-10"
                 style={{
                     backgroundImage: `radial-gradient(circle at 25% 25%, ${colors.zinc[700]} 2px, transparent 2px), radial-gradient(circle at 75% 75%, ${colors.zinc[600]} 1px, transparent 1px)`,
                     backgroundSize: '50px 50px'
                 }}
             />
 
+            {/* Styles pour ajustement zoom 125% */}
+            <style jsx>{`
+                @media screen and (-webkit-device-pixel-ratio: 1.25) {
+                    .content-container {
+                        padding-bottom: 16rem !important;
+                    }
+                }
+                @media screen and (min-resolution: 120dpi) and (max-resolution: 144dpi) {
+                    .content-container {
+                        padding-bottom: 16rem !important;
+                    }
+                }
+            `}</style>
+
             {/* Texte principal */}
-            <div className="relative z-10 min-h-screen flex flex-col justify-end items-start md:items-end pb-32 sm:pb-40 md:pb-64">
+            <div className="content-container relative z-20 min-h-screen flex flex-col justify-end items-start md:items-end pb-32 sm:pb-40 md:pb-64">
                 <div className="text-right md:text-right max-w-xl sm:max-w-2xl md:max-w-3xl w-full">
                     {/* Accent géométrique */}
                     <div

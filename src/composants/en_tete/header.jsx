@@ -20,7 +20,7 @@ const EnTete = () => {
     return (
         <>
             {/* Header desktop - reste en haut */}
-            <header className="hidden md:flex fixed top-0 left-0 w-full z-30 px-6 py-6 justify-between items-center text-white">
+            <header className="hidden md:flex fixed  ml-auto top-0 left-0 w-full z-30 px-6 py-6 justify-end items-center text-white">
                 {/* Logo à gauche */}
                 <h1 className="text-2xl font-bold tracking-tight">
                     <a href="/" className="text-white">
