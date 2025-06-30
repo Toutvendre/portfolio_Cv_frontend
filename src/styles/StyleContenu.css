@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+.text-container {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+
+/* Style par défaut (grands écrans) */
+.background-image {
+    transform: scale(1.2) translateY(20%);
+    opacity: 0.5;
+    object-fit: contain;
+    filter: grayscale(65%);
+}
+
+/* Responsive mobile : remonter l’image */
+@media (max-width: 768px) {
+    .background-image {
+        transform: scale(2.4) translateY(10%);
+    }
+}
+
+
+/* Style pour les barres verticales des icônes sociales */
+.social-bar {
+    width: 1px;
+    height: 90px;
+    background-color: white;
+    opacity: 0.4;
+}
+
+/* Style pour les icônes sociales */
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+/* Assurez-vous que les liens sont cliquables */
+.social-icon:hover {
+    color: #ef4444;
+}
+
+/* Conteneur des icônes sociales */
+.social-links-container {
+    pointer-events: auto; /* Permet les interactions */
+}
+
+.custom-button {
+    position: relative;
+    background-color: #dc2626; /* red-600 */
+    color: white;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4); /* shadow rouge */
+    overflow: hidden;
+}
+
+.custom-button:hover {
+    background-color: #b91c1c; /* red-700 */
+    transform: translateY(-2px) scale(1.05); /* levée + agrandissement */
+    box-shadow: 0 6px 18px rgba(185, 28, 28, 0.6); /* ombre plus profonde */
+}
+
+
