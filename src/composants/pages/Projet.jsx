@@ -41,7 +41,7 @@ const projects = [
         title: "Platforme D'information (Vulagtic)",
         description: "Développement d'une plateforme web pour Vulagtic, permettant la diffusion de formations, d'activités et d'autres annonces liées à ses services.",
         technologies: ["React", "Tailwind CSS", "Laravel", "PostgreSQL"],
-        image: "/images/porto1.png",
+        image: "/images/vulgatic/vulgatic.png",
         liveLink: "https://votre-site-demo.com",
         githubLink: "https://github.com/Toutvendre",
         category: "Full Stack",

@@ -31,7 +31,7 @@ export default function APropos() {
     return (
         <section
             id="about"
-            className="min-h-screen flex items-center justify-center px-8"
+            className="min-h-screen flex items-center justify-center px-8 pb-24 md:pb-0"
             style={{
                 backgroundColor: colors.zinc[950],
                 backgroundImage: `linear-gradient(135deg, ${colors.zinc[950]} 0%, ${colors.zinc[900]} 50%, ${colors.zinc[800]} 100%)`,
