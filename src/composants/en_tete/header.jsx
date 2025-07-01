@@ -10,11 +10,11 @@ const colors = {
 const EnTete = () => {
     const navItems = [
         { href: "/", label: "Accueil", icon: Home },
-        { href: "about", label: "A propos", icon: User },
-        { href: "services", label: "Services", icon: Briefcase },
-        { href: "resume", label: "Resume", icon: FileText },
-        { href: "projects", label: "projects", icon: FolderOpen },
-        { href: "contact", label: "Contact", icon: Mail }
+        { href: "#about", label: "A propos", icon: User },
+        { href: "#services", label: "Services", icon: Briefcase },
+        { href: "#resume", label: "Resume", icon: FileText },
+        { href: "#projects", label: "projects", icon: FolderOpen },
+        { href: "#contact", label: "Contact", icon: Mail }
     ];
 
     return (
