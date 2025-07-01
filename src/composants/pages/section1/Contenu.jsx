@@ -1,5 +1,6 @@
 import React from 'react';
 import colors from '@/lib/couleurs/librairie_couleur';
+import '@/styles/styleAccueil.css';
 
 const Button = ({ children, className, asChild, ...props }) => {
     if (asChild && React.Children.count(children) === 1) {
@@ -29,70 +30,6 @@ const Contenu = () => {
                     backgroundSize: '50px 50px'
                 }}
             />
-
-            {/* Styles pour ajustements responsifs */}
-            <style dangerouslySetInnerHTML={{
-                __html: `
-                    /* Mobile - Légère réduction d'échelle et remontée du contenu */
-                    @media screen and (max-width: 768px) {
-                        .content-container {
-                            padding-bottom: 16rem !important;
-                        }
-                        .text-content {
-                            transform: scale(0.95);
-                            transform-origin: center;
-                        }
-                    }
-                    
-                    /* Très petits écrans */
-                    @media screen and (max-width: 480px) {
-                        .content-container {
-                            padding-bottom: 12rem !important;
-                        }
-                        .text-content {
-                            transform: scale(0.9);
-                        }
-                    }
-
-                    /* PC - Faire descendre le contenu */
-                    @media screen and (min-width: 1024px) {
-                        .content-container {
-                            padding-bottom: 4rem !important;
-                            justify-content: center !important;
-                        }
-                    }
-                    
-                    /* Grands écrans PC */
-                    @media screen and (min-width: 1200px) {
-                        .content-container {
-                            padding-bottom: 2rem !important;
-                        }
-                    }
-
-                    /* Ajustements zoom 125% */
-                    @media screen and (-webkit-device-pixel-ratio: 1.25) {
-                        .content-container {
-                            padding-bottom: 6rem !important;
-                        }
-                    }
-                    @media screen and (min-resolution: 120dpi) and (max-resolution: 144dpi) {
-                        .content-container {
-                            padding-bottom: 6rem !important;
-                        }
-                    }
-                    
-                    /* Écrans PC moyens */
-                    @media screen and (min-width: 1024px) and (max-width: 1366px) {
-                        .content-container {
-                            padding-bottom: 3rem !important;
-                        }
-                        .text-content {
-                            transform: scale(0.95);
-                            transform-origin: center;
-                        }
-                    }
-                `
-            }} />
 
             {/* Texte principal */}
             <div className="content-container relative z-20 min-h-screen flex flex-col justify-end items-start md:items-end pb-32 sm:pb-40 md:pb-64">

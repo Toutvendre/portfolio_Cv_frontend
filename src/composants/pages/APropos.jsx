@@ -1,35 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import colors from "@/lib/couleurs/librairie_couleur";
-
-// Simulation de framer-motion pour cet exemple
-const motion = {
-    div: ({ children, animate, style, ...props }) => (
-        <div
-            {...props}
-            style={{
-                ...style,
-                animation: `slideIn 1.5s ease-out forwards`
-            }}
-        >
-            {children}
-            <style jsx>{`
-                @keyframes slideIn {
-                    from { width: 0; }
-                    to { width: ${animate?.width || '100%'}; }
-                }
-            `}</style>
-        </div>
-    )
-};
 
 const skills = [
     { name: "React / Framework", level: 60 },
-    { name: "Laravel", level: 50 },
+    { name: "Laravel", level: 70 },
     { name: "HTML/CSS", level: 80 },
     { name: "Figma", level: 50 },
 ];
 
 export default function APropos() {
+    const [animatedSkills, setAnimatedSkills] = useState(skills.map(() => 0));
+
+    useEffect(() => {
+        // Déclencher l'animation après le montage du composant
+        const timer = setTimeout(() => {
+            skills.forEach((skill, index) => {
+                setTimeout(() => {
+                    setAnimatedSkills(prev => {
+                        const newSkills = [...prev];
+                        newSkills[index] = skill.level;
+                        return newSkills;
+                    });
+                }, index * 200); // Délai progressif pour chaque barre
+            });
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <section
             id="about"
@@ -151,16 +149,14 @@ export default function APropos() {
                                     className="w-full h-2 rounded-full overflow-hidden"
                                     style={{ backgroundColor: colors.zinc[800] }}
                                 >
-                                    <motion.div
+                                    <div
                                         className="h-full rounded-full transition-all duration-1000 ease-out"
                                         style={{
                                             backgroundColor: colors.red[600],
-                                            width: `${skill.level}%`,
-                                            boxShadow: `0 0 10px ${colors.red[600]}50`
+                                            width: `${animatedSkills[idx]}%`,
+                                            boxShadow: `0 0 10px ${colors.red[600]}50`,
+                                            transition: 'width 1s ease-out'
                                         }}
-                                        initial={{ width: 0 }}
-                                        animate={{ width: `${skill.level}%` }}
-                                        transition={{ duration: 1.5, delay: idx * 0.2 }}
                                     />
                                 </div>
                             </div>

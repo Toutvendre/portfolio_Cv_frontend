@@ -1,0 +1,57 @@
+/* Mobile - Légère réduction d'échelle et remontée du contenu */
+@media screen and (max-width: 768px) {
+    .content-container {
+        padding-bottom: 16rem !important;
+    }
+    .text-content {
+        transform: scale(0.95);
+        transform-origin: center;
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 480px) {
+    .content-container {
+        padding-bottom: 12rem !important;
+    }
+    .text-content {
+        transform: scale(0.9);
+    }
+}
+
+/* PC - Faire descendre le contenu */
+@media screen and (min-width: 1024px) {
+    .content-container {
+        justify-content: center !important;
+    }
+}
+
+/* Grands écrans PC */
+@media screen and (min-width: 1200px) {
+    .content-container {
+        padding-bottom: 2rem !important;
+    }
+}
+
+/* Ajustements zoom 125% */
+@media screen and (-webkit-device-pixel-ratio: 1.25) {
+    .content-container {
+        padding-bottom: 6rem !important;
+    }
+}
+@media screen and (min-resolution: 120dpi) and (max-resolution: 144dpi) {
+    .content-container {
+        padding-bottom: 6rem !important;
+    }
+}
+
+/* Écrans PC moyens (résolutions standard type laptop 1366x768, 1440x900) */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .content-container {
+        padding-bottom: 8rem !important; /* ↑ augmenté pour faire descendre le contenu */
+    }
+    .text-content {
+        transform: scale(0.95);
+        transform-origin: center;
+    }
+}
