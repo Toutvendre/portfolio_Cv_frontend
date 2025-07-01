@@ -16,7 +16,7 @@ const Contenu = () => {
         <div
             className="relative min-h-screen w-full px-4 sm:px-6 lg:px-20"
             style={{
-                backgroundColor: `${colors.zinc[950]}80`, // Ajout de transparence (80 = 50% opacité)
+                backgroundColor: `${colors.zinc[950]}80`,
                 backgroundImage: `linear-gradient(135deg, ${colors.zinc[950]}80 0%, ${colors.zinc[900]}60 50%, ${colors.zinc[800]}40 100%)`,
                 color: colors.zinc[50]
             }}
@@ -30,23 +30,73 @@ const Contenu = () => {
                 }}
             />
 
-            {/* Styles pour ajustement zoom 125% */}
-            <style jsx>{`
-                @media screen and (-webkit-device-pixel-ratio: 1.25) {
-                    .content-container {
-                        padding-bottom: 16rem !important;
+            {/* Styles pour ajustements responsifs */}
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                    /* Mobile - Légère réduction d'échelle et remontée du contenu */
+                    @media screen and (max-width: 768px) {
+                        .content-container {
+                            padding-bottom: 16rem !important;
+                        }
+                        .text-content {
+                            transform: scale(0.95);
+                            transform-origin: center;
+                        }
                     }
-                }
-                @media screen and (min-resolution: 120dpi) and (max-resolution: 144dpi) {
-                    .content-container {
-                        padding-bottom: 16rem !important;
+                    
+                    /* Très petits écrans */
+                    @media screen and (max-width: 480px) {
+                        .content-container {
+                            padding-bottom: 12rem !important;
+                        }
+                        .text-content {
+                            transform: scale(0.9);
+                        }
                     }
-                }
-            `}</style>
+
+                    /* PC - Faire descendre le contenu */
+                    @media screen and (min-width: 1024px) {
+                        .content-container {
+                            padding-bottom: 4rem !important;
+                            justify-content: center !important;
+                        }
+                    }
+                    
+                    /* Grands écrans PC */
+                    @media screen and (min-width: 1200px) {
+                        .content-container {
+                            padding-bottom: 2rem !important;
+                        }
+                    }
+
+                    /* Ajustements zoom 125% */
+                    @media screen and (-webkit-device-pixel-ratio: 1.25) {
+                        .content-container {
+                            padding-bottom: 6rem !important;
+                        }
+                    }
+                    @media screen and (min-resolution: 120dpi) and (max-resolution: 144dpi) {
+                        .content-container {
+                            padding-bottom: 6rem !important;
+                        }
+                    }
+                    
+                    /* Écrans PC moyens */
+                    @media screen and (min-width: 1024px) and (max-width: 1366px) {
+                        .content-container {
+                            padding-bottom: 3rem !important;
+                        }
+                        .text-content {
+                            transform: scale(0.95);
+                            transform-origin: center;
+                        }
+                    }
+                `
+            }} />
 
             {/* Texte principal */}
             <div className="content-container relative z-20 min-h-screen flex flex-col justify-end items-start md:items-end pb-32 sm:pb-40 md:pb-64">
-                <div className="text-right md:text-right max-w-xl sm:max-w-2xl md:max-w-3xl w-full">
+                <div className="text-content text-right md:text-right max-w-xl sm:max-w-2xl md:max-w-3xl w-full">
                     {/* Accent géométrique */}
                     <div
                         className="w-16 h-1 mb-6 ml-auto rounded-full"
