@@ -62,7 +62,7 @@ export default function APropos() {
                     {/* Haut : Chiffre et point rouge */}
                     <div className="relative flex items-center justify-center flex-1 w-full">
                         <div
-                            className="text-[10rem] md:text-[16rem] font-extrabold leading-none"
+                            className="text-[12rem] md:text-[16rem] font-extrabold leading-none"
                             style={{
                                 color: colors.zinc[800],
                                 fontFamily: "'Playfair Display', serif"
@@ -72,27 +72,38 @@ export default function APropos() {
                             2
                         </div>
                         <div
-                            className="w-10 h-10 rounded-full shadow-lg"
+                            className="rounded-full shadow-lg w-8 h-8 md:w-10 md:h-10"
                             style={{
                                 backgroundColor: colors.red[600],
                                 position: "absolute",
-                                top: "77%",
+                                top: "68%",
                                 left: "75%",
                                 transform: "translate(-50%, -50%)",
                                 boxShadow: `0 0 20px ${colors.red[600]}50`
                             }}
                             aria-hidden="true"
-                        ></div>
+                        />
+                    </div>
+
+
+                    {/* Texte "ans" centré */}
+                    <div
+                        className="text-center text-2xl font-semibold tracking-wide mt-4"
+                        style={{ color: colors.zinc[300] }}
+                    >
+                        ans
                     </div>
 
                     {/* Milieu : Ligne fine avec gradient */}
                     <div
-                        className="w-40 h-px my-9"
+                        className="w-40 h-px my-9 mx-auto"
                         style={{
                             background: `linear-gradient(90deg, transparent, ${colors.zinc[400]}, transparent)`
                         }}
                         aria-hidden="true"
-                    ></div>
+                    />
+
+
                 </article>
 
                 {/* Bloc de droite */}
